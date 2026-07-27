@@ -9,7 +9,7 @@
 - [x] Update Skill and reference documentation with initializer behavior.
 - [x] Add README, MIT license, `.gitignore`, and GitHub Actions validation.
 - [x] Run complete tests, syntax checks, Skill validation, and code-map checks.
-- [ ] Create the public GitHub repository, push `main`, tag `v1.0.0`, and create
+- [x] Create the public GitHub repository, push `main`, tag `v1.0.0`, and create
   the release.
 - [x] Verify `npx skills` discovers the remote Skill and initialize a temporary
   project from the published revision.

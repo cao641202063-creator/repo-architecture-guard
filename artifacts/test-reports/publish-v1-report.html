@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Repository Architecture Guard v1.0.0 测试报告</title>
+  <title>Repository Architecture Guard v1 系列测试报告</title>
   <style>
     :root { font-family: system-ui, sans-serif; color: #17202a; background: #f4f6f7; }
     body { margin: 0; }
@@ -25,11 +25,11 @@
 </head>
 <body>
 <main>
-  <h1>v1.0.0 测试报告</h1>
-  <p>Repository Architecture Guard GitHub 发布候选</p>
+  <h1>v1 系列测试报告</h1>
+  <p>Repository Architecture Guard GitHub 正式发布</p>
 
   <section class="result">
-    <strong>结论：通过，可以发布。</strong>
+    <strong>结论：通过，已发布。</strong>
     <p>Skill 可从公开 GitHub 仓库发现；远端克隆版本能够根据业务输入生成产品目标、项目状态、唯一 AGENTS 管理区块和代码地图。</p>
   </section>
 
@@ -61,7 +61,9 @@
       <tr><th>脚本语法</th><td><code>code_map.py</code> 与 <code>init_project.py</code> 编译通过。</td></tr>
       <tr><th>代码地图</th><td>17 个节点，无新增、删除、变更、无效边和待语义审核节点。</td></tr>
       <tr><th>远端冒烟提交</th><td><code>69f9de81176c6fbfb9df070ddf5ce1caa3cd1702</code></td></tr>
-      <tr><th>发布身份</th><td><code>v1.0.0</code>；标签在最终发布候选验证通过后创建。</td></tr>
+      <tr><th>推荐发布提交</th><td><code>b375ce6212478e2c4ca075fd39157189b7f7087b</code></td></tr>
+      <tr><th>发布身份</th><td><code>v1.0.0</code> 为首个正式版本；<code>v1.0.1</code> 为 Latest，修复 Windows CI 路径断言并升级 GitHub Actions v7。</td></tr>
+      <tr><th>GitHub Actions</th><td>Agent Skills 发现和 6 个 Python 跨平台组合全部通过。</td></tr>
       <tr><th>验证日期</th><td>2026-07-27，Asia/Shanghai</td></tr>
     </tbody>
   </table>
