@@ -139,7 +139,7 @@ class ProjectInitializerTests(unittest.TestCase):
         goal = (self.root / "ProjectGoal.md").read_text(encoding="utf-8")
         self.assertIn("需要让实施人员快速查询设备知识。", goal)
         self.assertIn("Needs product-owner review", goal)
-        self.assertIn(str(brief), goal)
+        self.assertIn(str(brief.resolve()), goal)
 
     def test_missing_business_brief_fails_before_writing_files(self):
         result = self._run("--brief", "missing.md", "--no-code-map")
