@@ -2,13 +2,13 @@
   "meta": {
     "schema_version": 1,
     "project": "repo-architecture-guard",
-    "generated_at": "2026-07-27T09:17:09Z",
+    "generated_at": "2026-07-27T09:24:41Z",
     "stacks": [
       "python"
     ],
     "node_count": 17,
-    "source_head": "03f7e915f316c13798169e61fb310f8126bbef57",
-    "working_tree_dirty": false
+    "source_head": "69f9de81176c6fbfb9df070ddf5ce1caa3cd1702",
+    "working_tree_dirty": true
   },
   "nodes": [
     {
@@ -28,7 +28,7 @@
       "notes": "",
       "fingerprint": "sha256:291ba4d0280ba190df0e8f1c7280f99531612a433a05f6468cca3824e9b5477d",
       "needs_ai_review": false,
-      "last_verified": "2026-07-27T09:17:09Z"
+      "last_verified": "2026-07-27T09:24:41Z"
     },
     {
       "id": "docs.ai.project.status",
@@ -45,9 +45,9 @@
       "responsibility": "",
       "reuse_guidance": "",
       "notes": "",
-      "fingerprint": "sha256:c7c5e812f38248f2f499a8c740b067d6b8f84cf53ec30d0047efa3bac2298b7d",
+      "fingerprint": "sha256:801342eea6ad28954edaec9eedf774bbf0054501b42047ca5ba6571c51700424",
       "needs_ai_review": false,
-      "last_verified": "2026-07-27T09:17:09Z"
+      "last_verified": "2026-07-27T09:24:41Z"
     },
     {
       "id": "openspec.changes.publish.v1.design",
@@ -66,7 +66,7 @@
       "notes": "",
       "fingerprint": "sha256:8747cb477c1d12f036e800f31e979f9fe13bf84f1a0164cc4c0dd5c26662e14c",
       "needs_ai_review": false,
-      "last_verified": "2026-07-27T09:17:09Z"
+      "last_verified": "2026-07-27T09:24:41Z"
     },
     {
       "id": "openspec.changes.publish.v1.proposal",
@@ -85,7 +85,7 @@
       "notes": "",
       "fingerprint": "sha256:517260e1f7746ecf5608b71b8a7094c9a5fd13951cca265168fb7432bd917c9d",
       "needs_ai_review": false,
-      "last_verified": "2026-07-27T09:17:09Z"
+      "last_verified": "2026-07-27T09:24:41Z"
     },
     {
       "id": "openspec.changes.publish.v1.specs.project.initialization.spec",
@@ -104,7 +104,7 @@
       "notes": "",
       "fingerprint": "sha256:efcf2effa3510a52e5724bfc4fefd096adbb020d9be08998a33eda1bb2004902",
       "needs_ai_review": false,
-      "last_verified": "2026-07-27T09:17:09Z"
+      "last_verified": "2026-07-27T09:24:41Z"
     },
     {
       "id": "openspec.changes.publish.v1.tasks",
@@ -121,9 +121,9 @@
       "responsibility": "",
       "reuse_guidance": "",
       "notes": "",
-      "fingerprint": "sha256:3b7050a5da446993d006965e414987deeb141aaf3ca4c433f17ebbd1607c9983",
+      "fingerprint": "sha256:7c14d2c4316cb4a59464e1ce8aa69fc661552631a7cc1d1b07b9b203b11c59f1",
       "needs_ai_review": false,
-      "last_verified": "2026-07-27T09:17:09Z"
+      "last_verified": "2026-07-27T09:24:41Z"
     },
     {
       "id": "projectgoal",
@@ -142,7 +142,7 @@
       "notes": "",
       "fingerprint": "sha256:8b4abe6fd2a6bdf252bdac69783348da96d8c36dffdb90b42c773afd2603f40f",
       "needs_ai_review": false,
-      "last_verified": "2026-07-27T09:17:09Z"
+      "last_verified": "2026-07-27T09:24:41Z"
     },
     {
       "id": "readme",
@@ -161,7 +161,7 @@
       "notes": "",
       "fingerprint": "sha256:253692887cbd50387ac45989521dc177e59609189cf6ea1f6cc9097a62470e10",
       "needs_ai_review": false,
-      "last_verified": "2026-07-27T09:17:09Z"
+      "last_verified": "2026-07-27T09:24:41Z"
     },
     {
       "id": "references.agents.template",
@@ -180,7 +180,7 @@
       "notes": "",
       "fingerprint": "sha256:4813d3bafef5afc5ea3734b8ec209188ef8b8807ebe4e05a8c0f954d3c5f3452",
       "needs_ai_review": false,
-      "last_verified": "2026-07-27T09:17:09Z"
+      "last_verified": "2026-07-27T09:24:41Z"
     },
     {
       "id": "references.artifact.contract",
@@ -199,7 +199,7 @@
       "notes": "",
       "fingerprint": "sha256:c8f8a99c113a4d6fd0215253ae3be4ca61db687064cb3229111726ea55790903",
       "needs_ai_review": false,
-      "last_verified": "2026-07-27T09:17:09Z"
+      "last_verified": "2026-07-27T09:24:41Z"
     },
     {
       "id": "references.code.map.contract",
@@ -218,7 +218,7 @@
       "notes": "",
       "fingerprint": "sha256:037d5e6462b44e219f37bd34c4712b364a619a6c45d0c94134b9b4bbd2f2bbd6",
       "needs_ai_review": false,
-      "last_verified": "2026-07-27T09:17:09Z"
+      "last_verified": "2026-07-27T09:24:41Z"
     },
     {
       "id": "references.html.review.contract",
@@ -237,7 +237,7 @@
       "notes": "",
       "fingerprint": "sha256:58f079d95acf283ea928db4bbc196aa4a1a4c20c53785bfd5794fccdffdcfa67",
       "needs_ai_review": false,
-      "last_verified": "2026-07-27T09:17:09Z"
+      "last_verified": "2026-07-27T09:24:41Z"
     },
     {
       "id": "skill",
@@ -256,7 +256,7 @@
       "notes": "",
       "fingerprint": "sha256:19a74f47022c69cc7d81fa2e9a7a221fa4c590bef72da82c1b843805449effb0",
       "needs_ai_review": false,
-      "last_verified": "2026-07-27T09:17:09Z"
+      "last_verified": "2026-07-27T09:24:41Z"
     },
     {
       "id": "module.scripts",
@@ -276,7 +276,7 @@
       "notes": "Covered by tests/test_init_project.py, tests/test_code_map.py, and tests/test_package.py.",
       "fingerprint": "sha256:53d15cada5dab0b8be024605b50bc0b7e18423993a3f5c829ff7fddb591249aa",
       "needs_ai_review": false,
-      "last_verified": "2026-07-27T09:17:09Z"
+      "last_verified": "2026-07-27T09:24:41Z"
     },
     {
       "id": "tests.test.code.map",
@@ -310,7 +310,7 @@
       "notes": "",
       "fingerprint": "sha256:ed662bdfb3e91db194b4a077ff9c816412d75f20a6b1e009b6bd982a1530c382",
       "needs_ai_review": false,
-      "last_verified": "2026-07-27T09:17:09Z"
+      "last_verified": "2026-07-27T09:24:41Z"
     },
     {
       "id": "tests.test.init.project",
@@ -347,7 +347,7 @@
       "notes": "",
       "fingerprint": "sha256:c37657f17595bbd975c276cff69046c30b87f154cdfabfd6e1e92d606d80d3f8",
       "needs_ai_review": false,
-      "last_verified": "2026-07-27T09:17:09Z"
+      "last_verified": "2026-07-27T09:24:41Z"
     },
     {
       "id": "tests.test.package",
@@ -375,7 +375,7 @@
       "notes": "",
       "fingerprint": "sha256:6df846ac7e85b943be6ec10db9375e963902955ead31bb4e73d2190b0ba16610",
       "needs_ai_review": false,
-      "last_verified": "2026-07-27T09:17:09Z"
+      "last_verified": "2026-07-27T09:24:41Z"
     }
   ],
   "edges": [

@@ -10,7 +10,8 @@
   `AGENTS.md` integration.
 - Complete locally: GitHub packaging, CI, installation documentation, and
   local `npx skills` discovery.
-- In progress: remote publication and `v1.0.0` release verification.
+- Complete: public GitHub repository creation and remote user-path smoke tests.
+- In progress: final `v1.0.0` tag and release publication.
 
 ## Implementation Status
 
@@ -27,7 +28,8 @@
 - Complete local suite: 14 tests passing on Python 3.13 as of 2026-07-27.
 - Skill package: official `quick_validate.py` passed as of 2026-07-27.
 - Local `npx skills add --list` discovery passed.
-- Remote installation and GitHub Actions results: pending publication.
+- Remote `npx skills` discovery and cloned-revision initialization passed.
+- GitHub Actions result: pending final release-candidate push.
 
 ## Documentation Status
 
@@ -38,8 +40,7 @@
 
 ## Known Gaps and Risks
 
-- The remote installation path and GitHub Actions workflow must be tested after
-  publication.
+- GitHub Actions must pass for the final release-candidate push.
 
 ## Next Product Decisions
 

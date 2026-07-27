@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Repository Architecture Guard v1.0.0 测试报告</title>
+  <style>
+    :root { font-family: system-ui, sans-serif; color: #17202a; background: #f4f6f7; }
+    body { margin: 0; }
+    main { max-width: 1040px; margin: 0 auto; padding: 32px 20px 56px; }
+    h1 { margin: 0 0 8px; font-size: 28px; }
+    h2 { margin-top: 30px; font-size: 20px; }
+    .result { border-left: 5px solid #168653; background: white; padding: 18px; margin: 22px 0; }
+    .result strong { color: #10623d; font-size: 20px; }
+    .metrics { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; }
+    .metric { background: white; border: 1px solid #d5d8dc; padding: 14px; }
+    .metric b { display: block; font-size: 24px; }
+    table { width: 100%; border-collapse: collapse; background: white; }
+    th, td { padding: 12px; border: 1px solid #d5d8dc; text-align: left; vertical-align: top; }
+    th { background: #eaf2f8; }
+    .pass { color: #10623d; font-weight: 700; }
+    code { font-family: ui-monospace, monospace; }
+    @media (max-width: 720px) { .metrics { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+  </style>
+</head>
+<body>
+<main>
+  <h1>v1.0.0 测试报告</h1>
+  <p>Repository Architecture Guard GitHub 发布候选</p>
+
+  <section class="result">
+    <strong>结论：通过，可以发布。</strong>
+    <p>Skill 可从公开 GitHub 仓库发现；远端克隆版本能够根据业务输入生成产品目标、项目状态、唯一 AGENTS 管理区块和代码地图。</p>
+  </section>
+
+  <section class="metrics" aria-label="测试摘要">
+    <div class="metric"><b>14</b>自动化测试通过</div>
+    <div class="metric"><b>0</b>失败或阻塞项</div>
+    <div class="metric"><b>1</b>远端 Skill 被发现</div>
+    <div class="metric"><b>1/1</b>AGENTS 标记完整</div>
+  </section>
+
+  <h2>用户场景结论</h2>
+  <table>
+    <thead><tr><th>场景</th><th>结果</th><th>用户可见结论</th></tr></thead>
+    <tbody>
+      <tr><td>GitHub Skill 发现</td><td class="pass">通过</td><td><code>npx skills add cao641202063-creator/repo-architecture-guard --list</code> 找到一个名为 <code>repo-architecture-guard</code> 的 Skill。</td></tr>
+      <tr><td>远端项目初始化</td><td class="pass">通过</td><td>从 GitHub SSH 克隆后，初始化命令返回 <code>initialized</code>。</td></tr>
+      <tr><td>产品治理文件</td><td class="pass">通过</td><td><code>ProjectGoal.md</code> 与 <code>docs/ai/project-status.md</code> 均生成。</td></tr>
+      <tr><td>AGENTS 安全合并</td><td class="pass">通过</td><td>管理区块起止标记均只有一个；自动化测试同时验证已有内容保留和重复执行。</td></tr>
+      <tr><td>代码地图</td><td class="pass">通过</td><td>远端初始化执行 <code>bootstrap</code> 并生成 JSON 与 Markdown 地图。</td></tr>
+      <tr><td>文件保护</td><td class="pass">通过</td><td>已有目标和状态默认保留，只有显式 force 参数允许替换。</td></tr>
+    </tbody>
+  </table>
+
+  <h2>验证证据</h2>
+  <table>
+    <tbody>
+      <tr><th>自动化测试</th><td><code>python -m unittest discover -s tests -v</code>，14/14 通过。</td></tr>
+      <tr><th>Skill 校验</th><td>官方 <code>quick_validate.py</code> 返回 <code>Skill is valid!</code>。</td></tr>
+      <tr><th>脚本语法</th><td><code>code_map.py</code> 与 <code>init_project.py</code> 编译通过。</td></tr>
+      <tr><th>代码地图</th><td>17 个节点，无新增、删除、变更、无效边和待语义审核节点。</td></tr>
+      <tr><th>远端冒烟提交</th><td><code>69f9de81176c6fbfb9df070ddf5ce1caa3cd1702</code></td></tr>
+      <tr><th>发布身份</th><td><code>v1.0.0</code>；标签在最终发布候选验证通过后创建。</td></tr>
+      <tr><th>验证日期</th><td>2026-07-27，Asia/Shanghai</td></tr>
+    </tbody>
+  </table>
+
+  <h2>剩余风险</h2>
+  <p>不同项目仍需产品负责人确认业务输入中的未知项。代码地图用于导航，不替代对待修改源码、调用方和测试的阅读。</p>
+</main>
+</body>
+</html>

@@ -5,9 +5,9 @@
 ## Repository
 
 - Project: `repo-architecture-guard`
-- Generated: `2026-07-27T09:17:09Z`
-- Source HEAD: `03f7e915f316c13798169e61fb310f8126bbef57`
-- Working tree dirty: `no`
+- Generated: `2026-07-27T09:24:41Z`
+- Source HEAD: `69f9de81176c6fbfb9df070ddf5ce1caa3cd1702`
+- Working tree dirty: `yes`
 - Stacks: `python`
 - Nodes: `17`
 
