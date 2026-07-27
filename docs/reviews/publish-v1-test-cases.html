@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Repository Architecture Guard v1.0.0 验收用例</title>
+  <style>
+    :root { color-scheme: light; font-family: system-ui, sans-serif; color: #17202a; }
+    body { margin: 0; background: #f4f6f7; }
+    main { max-width: 1180px; margin: 0 auto; padding: 32px 20px 56px; }
+    h1 { margin: 0 0 8px; font-size: 28px; }
+    .summary { border-left: 4px solid #167d4d; background: white; padding: 16px; margin: 20px 0; }
+    table { width: 100%; border-collapse: collapse; background: white; font-size: 14px; }
+    th, td { padding: 12px; border: 1px solid #d5d8dc; text-align: left; vertical-align: top; }
+    th { background: #eaf2f8; }
+    .high { color: #a93226; font-weight: 700; }
+    code { font-family: ui-monospace, monospace; }
+  </style>
+</head>
+<body>
+<main>
+  <h1>v1.0.0 用户验收用例</h1>
+  <p>目标：用户可以从 GitHub 安装 Skill，并在不破坏现有项目规则的前提下，根据业务诉求初始化治理文件。</p>
+  <section class="summary">
+    <strong>覆盖结论：</strong>共 10 个高价值场景，覆盖安装、黄金流程、重复执行、已有文件保护、业务文档输入、边界、异常和跨平台命令。
+  </section>
+  <table>
+    <thead>
+      <tr><th>ID</th><th>类别</th><th>用户操作</th><th>预期结果</th><th>优先级</th><th>自动化</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>INS-01</td><td>黄金流程</td><td>通过 <code>npx skills add</code> 从公开仓库安装。</td><td>发现并安装 <code>repo-architecture-guard</code>。</td><td class="high">高</td><td>远端冒烟</td></tr>
+      <tr><td>INS-02</td><td>黄金流程</td><td>用完整参数初始化空项目。</td><td>生成目标、状态、AGENTS 管理区块和代码地图，并输出清单。</td><td class="high">高</td><td>单元+冒烟</td></tr>
+      <tr><td>INS-03</td><td>保护</td><td>在已有 AGENTS 规则的项目初始化。</td><td>原有内容保持不变，只追加一个管理区块。</td><td class="high">高</td><td>单元</td></tr>
+      <tr><td>INS-04</td><td>重复执行</td><td>连续运行初始化两次。</td><td>管理区块保持一个，内容原位更新。</td><td class="high">高</td><td>单元</td></tr>
+      <tr><td>INS-05</td><td>保护</td><td>项目已有 ProjectGoal 且未传强制参数。</td><td>目标文件不被覆盖，结果标记 preserved。</td><td class="high">高</td><td>单元</td></tr>
+      <tr><td>INS-06</td><td>业务输入</td><td>传入 UTF-8 业务诉求文档。</td><td>业务原文和来源被保留，未知字段明确待确认。</td><td>中</td><td>单元</td></tr>
+      <tr><td>INS-07</td><td>边界</td><td>产品字段包含中文、多行内容和标点。</td><td>生成的 Markdown 保持 UTF-8 且内容完整。</td><td>中</td><td>单元</td></tr>
+      <tr><td>INS-08</td><td>错误</td><td>传入不存在的业务文档。</td><td>返回非零状态和明确错误，不产生误导性成功结论。</td><td class="high">高</td><td>单元</td></tr>
+      <tr><td>INS-09</td><td>可控跳过</td><td>使用 <code>--no-code-map</code>。</td><td>只初始化产品治理文档，不运行地图脚本。</td><td>中</td><td>单元</td></tr>
+      <tr><td>INS-10</td><td>兼容性</td><td>Windows PowerShell 与 macOS/Linux shell 执行 README 指令。</td><td>使用同一 Python 脚本和相同产物结构。</td><td class="high">高</td><td>CI+文档检查</td></tr>
+    </tbody>
+  </table>
+</main>
+</body>
+</html>

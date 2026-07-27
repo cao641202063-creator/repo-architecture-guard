@@ -1,0 +1,404 @@
+{
+  "meta": {
+    "schema_version": 1,
+    "project": "repo-architecture-guard",
+    "generated_at": "2026-07-27T09:14:46Z",
+    "stacks": [
+      "python"
+    ],
+    "node_count": 17,
+    "source_head": null,
+    "working_tree_dirty": false
+  },
+  "nodes": [
+    {
+      "id": "agents",
+      "type": "documentation",
+      "name": "AGENTS",
+      "paths": [
+        "AGENTS.md"
+      ],
+      "symbols": [],
+      "imports": [],
+      "dependencies": [],
+      "tests": [],
+      "product_capability": "",
+      "responsibility": "",
+      "reuse_guidance": "",
+      "notes": "",
+      "fingerprint": "sha256:291ba4d0280ba190df0e8f1c7280f99531612a433a05f6468cca3824e9b5477d",
+      "needs_ai_review": false,
+      "last_verified": "2026-07-27T09:14:45Z"
+    },
+    {
+      "id": "docs.ai.project.status",
+      "type": "documentation",
+      "name": "project-status",
+      "paths": [
+        "docs/ai/project-status.md"
+      ],
+      "symbols": [],
+      "imports": [],
+      "dependencies": [],
+      "tests": [],
+      "product_capability": "",
+      "responsibility": "",
+      "reuse_guidance": "",
+      "notes": "",
+      "fingerprint": "sha256:c7c5e812f38248f2f499a8c740b067d6b8f84cf53ec30d0047efa3bac2298b7d",
+      "needs_ai_review": false,
+      "last_verified": "2026-07-27T09:14:45Z"
+    },
+    {
+      "id": "openspec.changes.publish.v1.design",
+      "type": "documentation",
+      "name": "design",
+      "paths": [
+        "openspec/changes/publish-v1/design.md"
+      ],
+      "symbols": [],
+      "imports": [],
+      "dependencies": [],
+      "tests": [],
+      "product_capability": "",
+      "responsibility": "",
+      "reuse_guidance": "",
+      "notes": "",
+      "fingerprint": "sha256:8747cb477c1d12f036e800f31e979f9fe13bf84f1a0164cc4c0dd5c26662e14c",
+      "needs_ai_review": false,
+      "last_verified": "2026-07-27T09:14:45Z"
+    },
+    {
+      "id": "openspec.changes.publish.v1.proposal",
+      "type": "documentation",
+      "name": "proposal",
+      "paths": [
+        "openspec/changes/publish-v1/proposal.md"
+      ],
+      "symbols": [],
+      "imports": [],
+      "dependencies": [],
+      "tests": [],
+      "product_capability": "",
+      "responsibility": "",
+      "reuse_guidance": "",
+      "notes": "",
+      "fingerprint": "sha256:517260e1f7746ecf5608b71b8a7094c9a5fd13951cca265168fb7432bd917c9d",
+      "needs_ai_review": false,
+      "last_verified": "2026-07-27T09:14:45Z"
+    },
+    {
+      "id": "openspec.changes.publish.v1.specs.project.initialization.spec",
+      "type": "documentation",
+      "name": "spec",
+      "paths": [
+        "openspec/changes/publish-v1/specs/project-initialization/spec.md"
+      ],
+      "symbols": [],
+      "imports": [],
+      "dependencies": [],
+      "tests": [],
+      "product_capability": "",
+      "responsibility": "",
+      "reuse_guidance": "",
+      "notes": "",
+      "fingerprint": "sha256:efcf2effa3510a52e5724bfc4fefd096adbb020d9be08998a33eda1bb2004902",
+      "needs_ai_review": false,
+      "last_verified": "2026-07-27T09:14:45Z"
+    },
+    {
+      "id": "openspec.changes.publish.v1.tasks",
+      "type": "documentation",
+      "name": "tasks",
+      "paths": [
+        "openspec/changes/publish-v1/tasks.md"
+      ],
+      "symbols": [],
+      "imports": [],
+      "dependencies": [],
+      "tests": [],
+      "product_capability": "",
+      "responsibility": "",
+      "reuse_guidance": "",
+      "notes": "",
+      "fingerprint": "sha256:3b7050a5da446993d006965e414987deeb141aaf3ca4c433f17ebbd1607c9983",
+      "needs_ai_review": false,
+      "last_verified": "2026-07-27T09:14:45Z"
+    },
+    {
+      "id": "projectgoal",
+      "type": "documentation",
+      "name": "ProjectGoal",
+      "paths": [
+        "ProjectGoal.md"
+      ],
+      "symbols": [],
+      "imports": [],
+      "dependencies": [],
+      "tests": [],
+      "product_capability": "",
+      "responsibility": "",
+      "reuse_guidance": "",
+      "notes": "",
+      "fingerprint": "sha256:8b4abe6fd2a6bdf252bdac69783348da96d8c36dffdb90b42c773afd2603f40f",
+      "needs_ai_review": false,
+      "last_verified": "2026-07-27T09:14:45Z"
+    },
+    {
+      "id": "readme",
+      "type": "documentation",
+      "name": "README",
+      "paths": [
+        "README.md"
+      ],
+      "symbols": [],
+      "imports": [],
+      "dependencies": [],
+      "tests": [],
+      "product_capability": "",
+      "responsibility": "",
+      "reuse_guidance": "",
+      "notes": "",
+      "fingerprint": "sha256:253692887cbd50387ac45989521dc177e59609189cf6ea1f6cc9097a62470e10",
+      "needs_ai_review": false,
+      "last_verified": "2026-07-27T09:14:45Z"
+    },
+    {
+      "id": "references.agents.template",
+      "type": "documentation",
+      "name": "agents-template",
+      "paths": [
+        "references/agents-template.md"
+      ],
+      "symbols": [],
+      "imports": [],
+      "dependencies": [],
+      "tests": [],
+      "product_capability": "",
+      "responsibility": "",
+      "reuse_guidance": "",
+      "notes": "",
+      "fingerprint": "sha256:4813d3bafef5afc5ea3734b8ec209188ef8b8807ebe4e05a8c0f954d3c5f3452",
+      "needs_ai_review": false,
+      "last_verified": "2026-07-27T09:14:45Z"
+    },
+    {
+      "id": "references.artifact.contract",
+      "type": "documentation",
+      "name": "artifact-contract",
+      "paths": [
+        "references/artifact-contract.md"
+      ],
+      "symbols": [],
+      "imports": [],
+      "dependencies": [],
+      "tests": [],
+      "product_capability": "",
+      "responsibility": "",
+      "reuse_guidance": "",
+      "notes": "",
+      "fingerprint": "sha256:c8f8a99c113a4d6fd0215253ae3be4ca61db687064cb3229111726ea55790903",
+      "needs_ai_review": false,
+      "last_verified": "2026-07-27T09:14:45Z"
+    },
+    {
+      "id": "references.code.map.contract",
+      "type": "documentation",
+      "name": "code-map-contract",
+      "paths": [
+        "references/code-map-contract.md"
+      ],
+      "symbols": [],
+      "imports": [],
+      "dependencies": [],
+      "tests": [],
+      "product_capability": "",
+      "responsibility": "",
+      "reuse_guidance": "",
+      "notes": "",
+      "fingerprint": "sha256:037d5e6462b44e219f37bd34c4712b364a619a6c45d0c94134b9b4bbd2f2bbd6",
+      "needs_ai_review": false,
+      "last_verified": "2026-07-27T09:14:45Z"
+    },
+    {
+      "id": "references.html.review.contract",
+      "type": "documentation",
+      "name": "html-review-contract",
+      "paths": [
+        "references/html-review-contract.md"
+      ],
+      "symbols": [],
+      "imports": [],
+      "dependencies": [],
+      "tests": [],
+      "product_capability": "",
+      "responsibility": "",
+      "reuse_guidance": "",
+      "notes": "",
+      "fingerprint": "sha256:58f079d95acf283ea928db4bbc196aa4a1a4c20c53785bfd5794fccdffdcfa67",
+      "needs_ai_review": false,
+      "last_verified": "2026-07-27T09:14:45Z"
+    },
+    {
+      "id": "skill",
+      "type": "documentation",
+      "name": "SKILL",
+      "paths": [
+        "SKILL.md"
+      ],
+      "symbols": [],
+      "imports": [],
+      "dependencies": [],
+      "tests": [],
+      "product_capability": "",
+      "responsibility": "",
+      "reuse_guidance": "",
+      "notes": "",
+      "fingerprint": "sha256:19a74f47022c69cc7d81fa2e9a7a221fa4c590bef72da82c1b843805449effb0",
+      "needs_ai_review": false,
+      "last_verified": "2026-07-27T09:14:45Z"
+    },
+    {
+      "id": "module.scripts",
+      "type": "module",
+      "name": "scripts",
+      "paths": [
+        "scripts/code_map.py",
+        "scripts/init_project.py"
+      ],
+      "symbols": [],
+      "imports": [],
+      "dependencies": [],
+      "tests": [],
+      "product_capability": "Cross-project governance initialization and repository code-map maintenance.",
+      "responsibility": "Owns deterministic project scaffolding, safe AGENTS managed-block merging, code-map discovery, freshness checks, updates, and rendering.",
+      "reuse_guidance": "Invoke init_project.py for new projects and code_map.py before and after code changes; do not duplicate their file-protection or fingerprint logic in project-specific scripts.",
+      "notes": "Covered by tests/test_init_project.py, tests/test_code_map.py, and tests/test_package.py.",
+      "fingerprint": "sha256:53d15cada5dab0b8be024605b50bc0b7e18423993a3f5c829ff7fddb591249aa",
+      "needs_ai_review": false,
+      "last_verified": "2026-07-27T09:14:45Z"
+    },
+    {
+      "id": "tests.test.code.map",
+      "type": "test",
+      "name": "CodeMapWorkflowTests",
+      "paths": [
+        "tests/test_code_map.py"
+      ],
+      "symbols": [
+        "CodeMapWorkflowTests",
+        "setUp",
+        "tearDown",
+        "test_bootstrap_builds_typed_nodes_and_markdown",
+        "test_check_and_update_detect_added_and_removed_nodes",
+        "test_check_detects_source_change_and_update_preserves_semantics",
+        "test_render_uses_enriched_json"
+      ],
+      "imports": [
+        "json",
+        "pathlib",
+        "subprocess",
+        "sys",
+        "tempfile",
+        "unittest"
+      ],
+      "dependencies": [],
+      "tests": [],
+      "product_capability": "",
+      "responsibility": "",
+      "reuse_guidance": "",
+      "notes": "",
+      "fingerprint": "sha256:ed662bdfb3e91db194b4a077ff9c816412d75f20a6b1e009b6bd982a1530c382",
+      "needs_ai_review": false,
+      "last_verified": "2026-07-27T09:14:45Z"
+    },
+    {
+      "id": "tests.test.init.project",
+      "type": "test",
+      "name": "ProjectInitializerTests",
+      "paths": [
+        "tests/test_init_project.py"
+      ],
+      "symbols": [
+        "ProjectInitializerTests",
+        "setUp",
+        "tearDown",
+        "test_business_brief_is_retained_and_missing_fields_are_explicit",
+        "test_code_map_is_bootstrapped_for_new_project",
+        "test_existing_agents_content_is_preserved_and_block_is_idempotent",
+        "test_existing_goal_and_status_are_preserved_without_force",
+        "test_force_flags_replace_existing_goal_and_status",
+        "test_missing_business_brief_fails_before_writing_files",
+        "test_non_interactive_initialization_creates_business_documents"
+      ],
+      "imports": [
+        "json",
+        "pathlib",
+        "subprocess",
+        "sys",
+        "tempfile",
+        "unittest"
+      ],
+      "dependencies": [],
+      "tests": [],
+      "product_capability": "",
+      "responsibility": "",
+      "reuse_guidance": "",
+      "notes": "",
+      "fingerprint": "sha256:c37657f17595bbd975c276cff69046c30b87f154cdfabfd6e1e92d606d80d3f8",
+      "needs_ai_review": false,
+      "last_verified": "2026-07-27T09:14:46Z"
+    },
+    {
+      "id": "tests.test.package",
+      "type": "test",
+      "name": "SkillPackageTests",
+      "paths": [
+        "tests/test_package.py"
+      ],
+      "symbols": [
+        "SkillPackageTests",
+        "test_readme_documents_install_update_and_initialization",
+        "test_required_distribution_files_exist",
+        "test_skill_frontmatter_has_expected_name_and_description"
+      ],
+      "imports": [
+        "pathlib",
+        "re",
+        "unittest"
+      ],
+      "dependencies": [],
+      "tests": [],
+      "product_capability": "",
+      "responsibility": "",
+      "reuse_guidance": "",
+      "notes": "",
+      "fingerprint": "sha256:6df846ac7e85b943be6ec10db9375e963902955ead31bb4e73d2190b0ba16610",
+      "needs_ai_review": false,
+      "last_verified": "2026-07-27T09:14:46Z"
+    }
+  ],
+  "edges": [
+    {
+      "from": "module.scripts",
+      "to": "tests.test.code.map",
+      "type": "tests",
+      "source": "ai",
+      "verified": true
+    },
+    {
+      "from": "module.scripts",
+      "to": "tests.test.init.project",
+      "type": "tests",
+      "source": "ai",
+      "verified": true
+    },
+    {
+      "from": "module.scripts",
+      "to": "tests.test.package",
+      "type": "tests",
+      "source": "ai",
+      "verified": true
+    }
+  ]
+}

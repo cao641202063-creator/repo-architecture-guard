@@ -1,0 +1,4 @@
+interface:
+  display_name: "Repository Architecture Guard"
+  short_description: "Gate code changes through goals, maps, reuse, and tests."
+  default_prompt: "Use $repo-architecture-guard before modifying this project."
