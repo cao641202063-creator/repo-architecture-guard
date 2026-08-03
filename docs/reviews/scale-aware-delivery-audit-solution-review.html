@@ -1,0 +1,15 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>规模化交付与审计方案确认</title>
+  <style>body{font-family:system-ui,sans-serif;color:#17202a;background:#f4f6f7;margin:0}main{max-width:960px;margin:auto;padding:32px 20px}section{background:#fff;border-radius:8px;padding:20px;margin:16px 0}.flow{display:flex;flex-wrap:wrap;gap:10px;align-items:center}.node{background:#eaf2f8;border:1px solid #85c1e9;border-radius:6px;padding:10px}.arrow{font-weight:700}.approved{color:#0b6b3a;font-weight:700}</style>
+</head>
+<body><main>
+<h1>规模化交付与审计</h1>
+<p><strong>版本：</strong>scale-aware-delivery-audit &middot; <strong>状态：</strong><span class="approved">产品负责人已于 2026-08-03 确认</span></p>
+<section><h2>目标与决策记录</h2><p><strong>受影响角色：</strong>产品经理、主交付 Agent、独立审计 Agent 与人工审核人。</p><p><strong>范围：</strong>由代码地图引导的全局理解、文档影响处置和有界交付审计。大型仓库获得基于证据的全局理解；每次代码改动都有文档影响处置；完整流程在人工审核前进行一次独立审计。</p><p><strong>业务规则：</strong>代码地图是导航证据而非行为证明；每份相关文档都必须有处置；审计首轮只读，主 Agent 最多修订一轮。</p><p><strong>假设：</strong>完整流程可获得独立 Agent 上下文。<strong>待决策项：</strong>无。<strong>非目标：</strong>全仓重复阅读、自动代替产品决策、递归式 Agent 互审或替代人工批准。</p></section>
+<section><h2>范围优先的理解过程</h2><div class="flow"><span class="node">相关代码地图节点</span><span class="arrow">→</span><span class="node">范围假设</span><span class="arrow">→</span><span class="node">定向验证源码与测试</span><span class="arrow">→</span><span class="node">已验证的逻辑与影响切片</span></div><p>未知事实必须明确保留；代码地图用于导航，不能替代阅读已变更的源码。</p></section>
+<section><h2>交付审计过程</h2><div class="flow"><span class="node">主 Agent：实现并验证</span><span class="arrow">→</span><span class="node">独立 Agent：只读审计</span><span class="arrow">→</span><span class="node">主 Agent：修订一轮</span><span class="arrow">→</span><span class="node">人工：最终确认</span></div><p>无法独立委派时，交付必须明确记录为自检，不能宣称进行了独立审计。</p></section>
+</main></body></html>

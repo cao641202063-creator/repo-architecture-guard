@@ -11,13 +11,15 @@
 
 Provide a reusable Codex Skill that makes every code change start from approved
 product goals and verified repository context, favors existing architecture,
-maintains a compact code map, and delivers evidence from the latest build.
+maintains a compact code map, challenges incomplete product requests, selects
+proportionate regression scope, confirms material solutions visually, and
+delivers evidence from the latest build.
 
 ## Current Milestone
 
 Publish the Skill as the public GitHub repository
 `cao641202063-creator/repo-architecture-guard` with an MIT license and a
-`v1.0.0` release. Users must be able to install it with `npx skills` and
+`v1.1.0` release. Users must be able to install it with `npx skills` and
 initialize a project through a guided command.
 
 ## Success Criteria
@@ -28,7 +30,18 @@ initialize a project through a guided command.
 - Initialization never overwrites unrelated existing `AGENTS.md` content.
 - Initialization can bootstrap or refresh the repository code map.
 - Code-map and initializer automated tests pass on Windows and GitHub Actions.
-- GitHub contains a public `v1.0.0` release with clear installation, update,
+- Incomplete, contradictory, or materially ambiguous requests produce focused
+  product questions or decision options before implementation.
+- Complex changes request a product-owner choice about full regression;
+  non-complex changes default to focused verification.
+- Material UI and non-UI designs have a reviewable visual solution artifact
+  with explicit approval status.
+- Large repositories use code-map-guided, scope-first traversal to establish
+  global logic and change impact without indiscriminate rereading.
+- Every completed code change records documentation impact and updates affected
+  documents; full-track delivery includes an independent-agent audit when the
+  environment supports it.
+- GitHub contains a public `v1.1.0` release with clear installation, update,
   initialization, and usage instructions.
 
 ## Non-Goals
@@ -45,12 +58,14 @@ initialize a project through a guided command.
 - Source code remains authoritative; generated maps are navigation aids.
 - Existing project files must be preserved unless the user explicitly approves
   replacement or deletion.
+- Human-facing Skill outputs and review artifacts default to Simplified Chinese;
+  commands, paths, code, and machine-readable fields remain unchanged.
 
 ## Product Decisions
 
 - Repository visibility: public.
 - License: MIT.
-- Initial release: `v1.0.0`.
+- Current release target: `v1.1.0`.
 - Installation channel: `npx skills`.
 - Initialization UX: interactive prompts plus non-interactive flags and a
   business-brief file option.

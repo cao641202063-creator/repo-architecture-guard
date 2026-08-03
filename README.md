@@ -7,6 +7,50 @@ Superpowers、TDD、用户场景测试和最新构建验证完成交付。
 Repository Architecture Guard is a Codex Skill for product-goal-driven,
 repository-aware software delivery.
 
+## 语言
+
+除非产品负责人或项目规则另有要求，Skill 面向人类的提问、评审、报告与交付说明默认使用简体中文；命令、路径、代码和机器可读字段保持原文。
+
+## Product-manager workflow
+
+Before planning or coding, the Skill checks whether the request makes the user
+value, affected users, scope, exclusions, acceptance criteria, material rules,
+failure and permission behavior, constraints, and priority clear. It separates
+blocking questions, owner decisions, and reversible assumptions; it also calls
+out conflicts rather than silently inventing product behavior.
+
+Before choosing test scope, it classifies the change as complex or non-complex.
+Complex changes explain their affected boundaries and ask whether to run full
+regression. Non-complex changes run focused verification by default; full
+regression runs only when the user or project policy requires it. Behavioral
+changes still use TDD.
+
+Every material behavior or experience change receives an HTML solution review
+before implementation. UI changes show screens and states; non-UI changes use
+an appropriate flow, state-machine, sequence, data-flow, or permission diagram.
+The review records assumptions, outstanding decisions, version, and explicit
+approval status.
+
+## Scale-aware delivery and audit
+
+For a large repository, the Skill starts from relevant code-map nodes and
+follows verified entry points, contracts, owners, callers, dependencies, data
+or event boundaries, tests, and documents. It expands source reading only when
+the map cannot answer a change-impact question; this preserves global logic
+without treating a full repository scan as understanding.
+
+Every completed code change includes a documentation impact analysis covering
+product, user, API/contract, operational, technical, test, and navigation
+documentation. Affected documents are updated; unchanged documents receive an
+evidence-backed disposition.
+
+For full-track work, the Skill starts an independent, read-only-first audit
+agent when the environment supports it. The auditor checks requirement
+traceability, impact, tests, documents, and unsupported claims. The primary
+agent makes one revision pass for blocker or major findings, then hands the
+audit disposition to a human reviewer. If independent delegation is unavailable,
+the final handoff explicitly says that only self-review occurred.
+
 ## 主要能力
 
 - 所有代码改动先读取 `ProjectGoal.md` 和当前项目状态。

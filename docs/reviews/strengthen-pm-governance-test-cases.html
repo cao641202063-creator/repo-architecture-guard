@@ -1,0 +1,16 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"><title>PM governance scenario matrix</title><style>body{font-family:system-ui,sans-serif;margin:32px;color:#17202a}table{border-collapse:collapse;width:100%}th,td{border:1px solid #d5d8dc;padding:10px;text-align:left;vertical-align:top}th{background:#eaf2f8}</style></head>
+<body>
+<h1>PM governance scenario matrix</h1>
+<p>Conclusion: the package contract tests cover policy propagation; manual artifact review confirms the product-manager flow.</p>
+<table>
+  <tr><th>ID</th><th>Scenario</th><th>Expected outcome</th><th>Target</th></tr>
+  <tr><td>PMG-01</td><td>Request omits a material acceptance rule</td><td>Skill asks a blocking question before implementation.</td><td>Manual policy review</td></tr>
+  <tr><td>PMG-02</td><td>Request conflicts with a documented non-goal</td><td>Skill explains the conflict and requests an owner decision.</td><td>Manual policy review</td></tr>
+  <tr><td>PMG-03</td><td>Change has a public API or permission impact</td><td>Skill classifies it complex and asks about full regression.</td><td>Package contract test</td></tr>
+  <tr><td>PMG-04</td><td>Local behavior change has no complex trigger</td><td>Skill uses focused verification by default.</td><td>Package contract test</td></tr>
+  <tr><td>PMG-05</td><td>Material non-UI change</td><td>Solution review includes an appropriate diagram and approval state.</td><td>Package contract test and manual artifact review</td></tr>
+</table>
+</body>
+</html>

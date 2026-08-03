@@ -117,6 +117,24 @@ After `bootstrap`:
 It is acceptable for unrelated nodes to remain pending. Do not spend tokens
 enriching the entire repository when the task does not need them.
 
+## Global Logic Navigation
+
+For a code change, start from the code-map nodes nearest to the requested
+behavior. State a compact scope hypothesis: entry points, public contracts,
+owners, direct dependencies, callers, data or event boundaries, tests, and
+documents likely affected.
+
+Then verify only the required adjacent boundaries through targeted source,
+caller, test, and document inspection. Expand the scope when evidence requires
+it; mark unknowns rather than inferring them. The map is navigation evidence,
+not proof of behavior, and never replaces reading changed files. Include the
+verified logic and impact slice in the Context Brief. Do not read the repository
+indiscriminately or create a second global map.
+
+Use `docs/ai/modules/` only for a genuinely complex module whose local map node
+cannot explain its stable responsibilities and boundaries. Do not duplicate
+code-map facts, source bodies, or per-change analysis in module notes.
+
 ## Update Rules
 
 Run `check` before coding and `update` after structural changes.

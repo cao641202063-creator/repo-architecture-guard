@@ -4,13 +4,20 @@ Create self-contained or project-runnable HTML that a product manager can
 review without reading source code or raw test logs. Prefer concise text,
 realistic data, diagrams, UI captures, and clear conclusions.
 
-## UI Review Artifact
+## 语言
 
-Store at `docs/reviews/<change>-ui-review.html`.
+除非产品负责人或项目规则另有要求，页面中面向人类的内容以简体中文为主。命令、路径、
+文件名、代码、API 标识符、配置键、JSON 字段及机器可读协议保持原文。
+
+## Solution Review Artifact
+
+Store at `docs/reviews/<change>-solution-review.html`.
 
 Include:
 
 - product goal and affected users
+- affected roles, scope, non-goals, assumptions, unresolved decisions, version,
+  and explicit approval status
 - affected navigation and complete screen inventory
 - realistic desktop and mobile states
 - primary and alternative user flows
@@ -21,9 +28,11 @@ Include:
 - unresolved product decisions
 - revision and approval status
 
-The page is a development input, not a marketing page. Show the actual
-experience. Keep technical implementation details out unless they change user
-behavior.
+For a material non-UI change, replace screen inventory and responsive mockups
+with the appropriate user flow, state-machine, sequence, data-flow, or
+permission diagram. The page is a development input, not a marketing page.
+Show the actual proposed behavior. An artifact without explicit approval or
+with unresolved material decisions remains a proposal.
 
 ## User-Scenario Test Artifact
 
@@ -59,7 +68,10 @@ Order content for product review:
 5. golden-flow narrative with screenshots
 6. boundary, error, permission, and responsive conclusions
 7. exact build provenance
-8. supporting test commands and linked raw logs
+8. documentation impact table: document, category, disposition, and evidence
+9. independent agent audit scope, findings, dispositions, and revisions; or an
+   explicit statement that only self-review was available
+10. supporting test commands and linked raw logs
 
 Do not expose stack traces as the primary content. Translate failures into
 user-visible impact. Include screenshots only when they demonstrate a state or

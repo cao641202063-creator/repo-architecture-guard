@@ -14,6 +14,36 @@ truth, and finish with evidence from the exact build being delivered.
 Project `AGENTS.md` instructions and explicit user decisions override defaults
 in this skill.
 
+## 语言
+
+除非产品负责人或项目规则另有要求，所有面向人类的提问、Context Brief、方案确认、
+测试场景、报告、文档影响分析、审计结论和最终交付说明均以简体中文为主。命令、路径、
+文件名、代码、API 标识符、配置键、JSON 字段及机器可读协议保持原文，确保可复制和
+可执行。无需仅为语言策略重写未受当前变更影响的历史证据。
+
+## Requirement Readiness and Product Challenge
+
+Before selecting a delivery track or planning implementation, assess whether
+the request states the user value, affected users, scope and exclusions,
+acceptance criteria, business or data rules, permissions or failure behavior,
+constraints, and priority where relevant. Compare it with explicit product
+decisions, goals, approved designs, and repository evidence.
+
+Classify gaps explicitly:
+
+- **blocking question**: a missing fact or conflict would materially change
+  scope, behavior, acceptance, risk, or implementation; ask focused questions
+  and wait before implementation.
+- **decision needed**: the product owner must choose among meaningful options;
+  explain the trade-off and recommend an option.
+- **reversible assumption**: the detail does not materially change behavior or
+  risk; record it for review and continue only if no blocking question remains.
+
+Challenge a request when it names a solution without the user problem or
+success measure, conflicts with an approved decision or non-goal, has an
+unverifiable acceptance criterion, or omits a material boundary. Do not invent
+business behavior merely to make the request implementable.
+
 ## Required References
 
 Load only the reference needed for the current gate:
@@ -80,6 +110,24 @@ Use the **full track** for:
 When uncertain, use the full track. A user may explicitly waive a review gate;
 record the waiver and continue, but never waive fresh verification.
 
+## Complexity and Regression Decision
+
+Before selecting test scope, classify the change and state the rationale in
+product-manager language. A change is **complex** when it affects a public
+contract, data migration, permission or security boundary, critical business
+path, or multiple module, role, or persistence boundaries. Otherwise it is
+**non-complex** when its changed and affected behavior can be covered by
+focused checks without those triggers.
+
+- For a complex change, state the affected boundaries and ask the product owner
+  whether to run full regression. Wait for the choice before committing to that
+  scope; project policy can still require it.
+- For a non-complex change, run focused tests for changed and affected behavior
+  by default. Do not run full regression unless the user or project policy
+  explicitly requires it.
+- This decision does not waive TDD for behavioral code, targeted regression,
+  or any verification required by a project policy.
+
 ## Context Gate
 
 Complete these steps before editing code:
@@ -111,6 +159,9 @@ Before implementation, output a concise **Context Brief**:
 - code-map nodes and source evidence inspected
 - existing capabilities to reuse, extend, or abstract
 - selected track and planned modules
+- user value, affected roles, scope, non-goals, and success measure
+- blocking questions, decisions needed, and reversible assumptions
+- complexity classification, affected boundaries, and regression choice
 - specifications, designs, tests, and documents to create or update
 - verification commands and delivery criteria
 - unresolved assumptions or conflicts
@@ -151,6 +202,13 @@ After bootstrap or update:
 The map is a navigation index. Always read files before modifying them. Do not
 paste source bodies or map every private function into the map.
 
+## Scope-First Global Logic
+
+Complete the Global Logic Navigation defined in
+`references/code-map-contract.md` before implementation. Include its verified
+logic and impact slice in the Context Brief for cross-module or full-track
+changes.
+
 ## Full-Track Design Gates
 
 ### Specification
@@ -168,15 +226,22 @@ Use relevant Superpowers process skills in this order:
 4. `$systematic-debugging` for test or runtime failures.
 5. `$verification-before-completion` before reporting success.
 
-### UI Review
+### Solution Review
 
-For UI changes, create a concise HTML review artifact before implementation.
-Follow `references/html-review-contract.md`. Cover the complete affected
-experience: screens, navigation, actions, states, validation, permissions,
-empty/loading/error behavior, responsive behavior, and business logic.
+For every material behavior or experience change, create a concise HTML
+solution review artifact before implementation. Follow
+`references/html-review-contract.md`. It must show the proposed user flow,
+state or data flow as applicable, business rules, assumptions, unresolved
+decisions, version, and approval status.
 
-Retain the approved artifact as a development input. Do not silently drift from
-it; revise and re-review material changes.
+For UI changes, cover the complete affected experience: screens, navigation,
+actions, states, validation, permissions, empty/loading/error behavior,
+responsive behavior, and business logic. For material non-UI changes, use the
+appropriate flow, state-machine, sequence, data-flow, or permission diagram.
+
+Treat an artifact with unresolved material decisions or no explicit approval as
+a proposal, not an approved development input. Do not silently drift from an
+approved artifact; revise and re-review material changes.
 
 ### User-Scenario Test Review
 
@@ -258,6 +323,11 @@ Generate a conclusion-first HTML report when the full track or user-facing
 testing applies. Include user-readable outcomes, scenario results, and
 screenshots; link raw logs instead of making them the primary content.
 
+## Documentation Impact Analysis
+
+Complete the Documentation Impact Analysis defined in
+`references/artifact-contract.md` after every code change.
+
 ## Documentation and Map Gate
 
 Before completion:
@@ -266,13 +336,15 @@ Before completion:
 2. review and enrich relevant new or changed nodes
 3. run `render` and `check`
 4. update `project-status.md`
-5. update affected user and technical documentation
-6. inventory documentation and navigation
-7. remove only documents confirmed as superseded or obsolete
-8. list ambiguous documents for product-owner review
-9. verify links, commands, paths, and examples
+5. complete the Documentation Impact Analysis
+6. remove only documents confirmed as superseded or obsolete
 
 Update `ProjectGoal.md` only when the actual product goal changed.
+
+## Independent Delivery Audit
+
+For every full-track change, complete the Independent Agent Audit defined in
+`references/artifact-contract.md` before human handoff.
 
 ## Completion Gate
 
@@ -284,6 +356,7 @@ Invoke `$verification-before-completion` and run fresh final commands. Report:
 - user-scenario and automated test conclusions
 - latest-build provenance
 - code-map and documentation updates
+- documentation-impact and independent-audit conclusions
 - remaining risks or external blockers
 
 Do not claim completion without fresh evidence.

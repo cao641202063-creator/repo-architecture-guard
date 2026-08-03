@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><title>Scale-aware delivery audit report</title><style>body{font-family:system-ui,sans-serif;margin:32px;color:#17202a}table{border-collapse:collapse;width:100%;margin:12px 0}th,td{border:1px solid #d5d8dc;padding:10px;text-align:left;vertical-align:top}th{background:#eaf2f8}.pass{color:#0b6b3a;font-weight:700}</style></head><body>
+<h1>Scale-aware delivery audit report</h1>
+<p class="pass">Conclusion: the documented governance change passed its package, syntax, OpenSpec, and code-map verification after one independent-audit revision pass.</p>
+<h2>Delivered outcome</h2><p>The Skill now uses a code-map-guided scope hypothesis for large repositories, records a documentation impact disposition after every code change, and performs one bounded independent-agent audit for full-track delivery when available.</p>
+<h2>Documentation impact analysis</h2><table><tr><th>Category</th><th>Disposition</th><th>Evidence</th></tr>
+<tr><td>Product decision</td><td>Updated</td><td><code>ProjectGoal.md</code> success criteria add scale-aware navigation, documentation impact, and audit.</td></tr>
+<tr><td>User guide</td><td>Updated</td><td><code>README.md</code> documents the workflow and fallback.</td></tr>
+<tr><td>API or contract</td><td>Updated</td><td><code>references/artifact-contract.md</code>, <code>references/code-map-contract.md</code>, and <code>references/html-review-contract.md</code>.</td></tr>
+<tr><td>Operational/runbook</td><td>Unchanged with evidence</td><td>No project runbook exists and this change alters no deployment or support procedure.</td></tr>
+<tr><td>Technical architecture</td><td>Updated</td><td><code>SKILL.md</code>, generated policy template, OpenSpec, and code map.</td></tr>
+<tr><td>Test/quality</td><td>Updated</td><td><code>tests/test_package.py</code> and the scenario matrix cover the mandatory policy contract.</td></tr>
+<tr><td>Navigation/index</td><td>Updated</td><td><code>docs/ai/code-map.json</code> and <code>docs/ai/code-map.md</code> regenerated after final changes.</td></tr></table>
+<h2>Independent agent audit</h2><p><strong>Scope:</strong> requirement traceability, rule duplication, global-logic feasibility, documentation impact, audit fallback, tests, and delivery evidence. <strong>Evidence reviewed:</strong> final diff, Skill, templates, contracts, tests, OpenSpec, and review artifacts.</p><table><tr><th>Finding</th><th>Severity</th><th>Disposition</th></tr>
+<tr><td>Missing delivery evidence, status/tasks closure, and code-map coverage</td><td>Major</td><td>Resolved by this report, OpenSpec/status updates, and final code-map generation.</td></tr>
+<tr><td>Solution review lacked required decision-record fields</td><td>Minor</td><td>Resolved by adding affected roles, scope, assumptions, unresolved decisions, and business rules.</td></tr>
+<tr><td>Policy contract assertions were shallow</td><td>Minor</td><td>Resolved by asserting scope hypothesis, boundary fields, one-pass limit, and self-review fallback.</td></tr></table>
+<p>No blocker remains. Human approval remains required; no second audit loop was started.</p>
+<h2>Verification and provenance</h2><ul><li>Source revision: <code>341ea8eaeed2cf1156e5f481861f8f482042e32d</code>; working tree: dirty, as this is an uncommitted delivery.</li><li>Build/compile: <code>python -m py_compile scripts/code_map.py scripts/init_project.py</code>.</li><li>Tests: <code>python -m unittest discover -s tests -v</code>.</li><li>Specification: <code>openspec validate scale-aware-delivery-audit --strict</code>.</li><li>Map: <code>python scripts/code_map.py update --root .</code>, <code>render</code>, and <code>check --json</code>.</li></ul>
+</body></html>

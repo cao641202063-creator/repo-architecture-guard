@@ -1,0 +1,10 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><title>Scale-aware delivery audit scenarios</title><style>body{font-family:system-ui,sans-serif;margin:32px;color:#17202a}table{border-collapse:collapse;width:100%}th,td{border:1px solid #d5d8dc;padding:10px;text-align:left}th{background:#eaf2f8}</style></head><body>
+<h1>Scale-aware delivery audit scenarios</h1><table>
+<tr><th>ID</th><th>Scenario</th><th>Expected result</th><th>Verification</th></tr>
+<tr><td>SAD-01</td><td>Large-repository change starts with mapped nodes</td><td>Scope hypothesis identifies boundaries and expands only with evidence.</td><td>Policy contract test</td></tr>
+<tr><td>SAD-02</td><td>Map lacks a necessary fact</td><td>Targeted source inspection occurs; unknowns are not inferred.</td><td>Manual policy review</td></tr>
+<tr><td>SAD-03</td><td>Completed code change affects a runbook or API guide</td><td>Document is updated and impact disposition is recorded.</td><td>Policy contract test</td></tr>
+<tr><td>SAD-04</td><td>Full-track delivery with delegation</td><td>Fresh, read-only-first auditor returns evidence-based findings; primary revises once.</td><td>Policy contract test and manual artifact review</td></tr>
+<tr><td>SAD-05</td><td>Delegation unavailable</td><td>Handoff discloses self-review and retains human approval.</td><td>Manual policy review</td></tr>
+</table></body></html>

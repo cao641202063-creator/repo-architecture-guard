@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>PM governance solution review</title>
+  <style>
+    body { font-family: system-ui, sans-serif; color: #17202a; background: #f4f6f7; margin: 0; }
+    main { max-width: 980px; margin: auto; padding: 32px 20px; }
+    section { background: #fff; border-radius: 8px; margin: 16px 0; padding: 20px; }
+    .approved { color: #0b6b3a; font-weight: 700; }
+    .flow { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; }
+    .node { background: #eaf2f8; border: 1px solid #85c1e9; border-radius: 6px; padding: 10px; }
+    .arrow { font-weight: 700; }
+    table { width: 100%; border-collapse: collapse; }
+    th, td { border: 1px solid #d5d8dc; padding: 10px; text-align: left; vertical-align: top; }
+    th { background: #eaf2f8; }
+  </style>
+</head>
+<body>
+<main>
+  <h1>Product-manager governance solution review</h1>
+  <p><strong>Version:</strong> strengthen-pm-governance &middot; <strong>Status:</strong> <span class="approved">Approved by product owner on 2026-08-03</span></p>
+  <section>
+    <h2>Goal and scope</h2>
+    <p>Help product managers turn incomplete development requests into explicit decisions before code changes begin. The scope includes request readiness, proportional regression selection, and visual confirmation for UI and non-UI changes.</p>
+    <p><strong>Non-goals:</strong> automatically deciding product policy, replacing project-native tests, or requiring full regression for every change.</p>
+  </section>
+  <section>
+    <h2>Decision flow</h2>
+    <div class="flow" aria-label="Request to delivery flow">
+      <span class="node">Request</span><span class="arrow">→</span>
+      <span class="node">Readiness and conflict check</span><span class="arrow">→</span>
+      <span class="node">Complexity assessment</span><span class="arrow">→</span>
+      <span class="node">Visual solution confirmation</span><span class="arrow">→</span>
+      <span class="node">TDD, focused tests, and delivery evidence</span>
+    </div>
+    <p>Blocking information pauses work. Owner decisions present options and a recommendation. Reversible assumptions remain visible in the review artifact.</p>
+  </section>
+  <section>
+    <h2>Regression decision</h2>
+    <table>
+      <tr><th>Classification</th><th>Signals</th><th>Default action</th></tr>
+      <tr><td>Complex</td><td>Public contract, data migration, permission/security, critical path, or multiple module/role/persistence boundaries</td><td>Ask the product owner whether to run full regression; retain focused verification.</td></tr>
+      <tr><td>Non-complex</td><td>Local change with no complex trigger and focused coverage of affected behavior</td><td>Run focused verification; do not run full regression unless explicitly required.</td></tr>
+    </table>
+  </section>
+  <section>
+    <h2>Visual confirmation</h2>
+    <p>UI work uses screens, navigation, state, and validation review. Non-UI work uses a flow, state-machine, sequence, data-flow, or permission diagram. An unapproved artifact or one with unresolved material decisions is a proposal, not an implementation input.</p>
+  </section>
+</main>
+</body>
+</html>

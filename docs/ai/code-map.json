@@ -2,12 +2,12 @@
   "meta": {
     "schema_version": 1,
     "project": "repo-architecture-guard",
-    "generated_at": "2026-07-27T09:35:05Z",
+    "generated_at": "2026-08-03T02:09:41Z",
     "stacks": [
       "python"
     ],
-    "node_count": 17,
-    "source_head": "b375ce6212478e2c4ca075fd39157189b7f7087b",
+    "node_count": 29,
+    "source_head": "341ea8eaeed2cf1156e5f481861f8f482042e32d",
     "working_tree_dirty": true
   },
   "nodes": [
@@ -22,13 +22,13 @@
       "imports": [],
       "dependencies": [],
       "tests": [],
-      "product_capability": "",
-      "responsibility": "",
-      "reuse_guidance": "",
-      "notes": "",
-      "fingerprint": "sha256:291ba4d0280ba190df0e8f1c7280f99531612a433a05f6468cca3824e9b5477d",
+      "product_capability": "Applies the repository's own governance rules when the Skill is changed.",
+      "responsibility": "Requires context inspection, TDD for runtime code, and full repository verification before publishing.",
+      "reuse_guidance": "Read before changing this repository; its rules override generic Skill defaults.",
+      "notes": "Repository-local policy.",
+      "fingerprint": "sha256:5f0c909812eacb0b230fa1f1a4ae278dd7ac65486b6c10681d85f01cb42815ce",
       "needs_ai_review": false,
-      "last_verified": "2026-07-27T09:35:05Z"
+      "last_verified": "2026-08-03T02:09:41Z"
     },
     {
       "id": "docs.ai.project.status",
@@ -45,9 +45,85 @@
       "responsibility": "",
       "reuse_guidance": "",
       "notes": "",
-      "fingerprint": "sha256:b630b48f1d7580903e246e236606c5a819be2f68cf4ba990311f6e15e6539f86",
+      "fingerprint": "sha256:d52e2f883835ad8db98cacf0f46d7d00db105d44d5191095835ed916d3408b8a",
       "needs_ai_review": false,
-      "last_verified": "2026-07-27T09:35:05Z"
+      "last_verified": "2026-08-03T02:09:41Z"
+    },
+    {
+      "id": "openspec.changes.chinese.first.language.design",
+      "type": "documentation",
+      "name": "design",
+      "paths": [
+        "openspec/changes/chinese-first-language/design.md"
+      ],
+      "symbols": [],
+      "imports": [],
+      "dependencies": [],
+      "tests": [],
+      "product_capability": "",
+      "responsibility": "",
+      "reuse_guidance": "",
+      "notes": "",
+      "fingerprint": "sha256:94286d9249e893d32de25fe8d4799bd5c58bb8b9c20b328067585621841c55e7",
+      "needs_ai_review": false,
+      "last_verified": "2026-08-03T02:09:41Z"
+    },
+    {
+      "id": "openspec.changes.chinese.first.language.proposal",
+      "type": "documentation",
+      "name": "proposal",
+      "paths": [
+        "openspec/changes/chinese-first-language/proposal.md"
+      ],
+      "symbols": [],
+      "imports": [],
+      "dependencies": [],
+      "tests": [],
+      "product_capability": "",
+      "responsibility": "",
+      "reuse_guidance": "",
+      "notes": "",
+      "fingerprint": "sha256:b28bcce36eabbe0e1ad22fb3044c562ab39ba80f7ad3a211301a715a97810eb1",
+      "needs_ai_review": false,
+      "last_verified": "2026-08-03T02:09:41Z"
+    },
+    {
+      "id": "openspec.changes.chinese.first.language.specs.chinese.first.language.spec",
+      "type": "documentation",
+      "name": "spec",
+      "paths": [
+        "openspec/changes/chinese-first-language/specs/chinese-first-language/spec.md"
+      ],
+      "symbols": [],
+      "imports": [],
+      "dependencies": [],
+      "tests": [],
+      "product_capability": "",
+      "responsibility": "",
+      "reuse_guidance": "",
+      "notes": "",
+      "fingerprint": "sha256:9efe0d9256edc0df53b0bfa7ed0ee70e090cfdbf1e07e0459afe80021cfbef26",
+      "needs_ai_review": false,
+      "last_verified": "2026-08-03T02:09:41Z"
+    },
+    {
+      "id": "openspec.changes.chinese.first.language.tasks",
+      "type": "documentation",
+      "name": "tasks",
+      "paths": [
+        "openspec/changes/chinese-first-language/tasks.md"
+      ],
+      "symbols": [],
+      "imports": [],
+      "dependencies": [],
+      "tests": [],
+      "product_capability": "",
+      "responsibility": "",
+      "reuse_guidance": "",
+      "notes": "",
+      "fingerprint": "sha256:b35668d82c447c3de579c9447e7f1ad2930a5b608a05e884cab5348533a72e8b",
+      "needs_ai_review": false,
+      "last_verified": "2026-08-03T02:09:41Z"
     },
     {
       "id": "openspec.changes.publish.v1.design",
@@ -64,9 +140,9 @@
       "responsibility": "",
       "reuse_guidance": "",
       "notes": "",
-      "fingerprint": "sha256:8747cb477c1d12f036e800f31e979f9fe13bf84f1a0164cc4c0dd5c26662e14c",
+      "fingerprint": "sha256:4f3aee8b28aa71322132ca810b3035da757f8694e77126a26f1a0f096ea1260a",
       "needs_ai_review": false,
-      "last_verified": "2026-07-27T09:35:05Z"
+      "last_verified": "2026-08-03T02:09:41Z"
     },
     {
       "id": "openspec.changes.publish.v1.proposal",
@@ -83,9 +159,9 @@
       "responsibility": "",
       "reuse_guidance": "",
       "notes": "",
-      "fingerprint": "sha256:517260e1f7746ecf5608b71b8a7094c9a5fd13951cca265168fb7432bd917c9d",
+      "fingerprint": "sha256:026c1a7d2d9c19e5734fae7e87aa392663a134714ad3a4659cd480a5c459c3b7",
       "needs_ai_review": false,
-      "last_verified": "2026-07-27T09:35:05Z"
+      "last_verified": "2026-08-03T02:09:41Z"
     },
     {
       "id": "openspec.changes.publish.v1.specs.project.initialization.spec",
@@ -102,9 +178,9 @@
       "responsibility": "",
       "reuse_guidance": "",
       "notes": "",
-      "fingerprint": "sha256:efcf2effa3510a52e5724bfc4fefd096adbb020d9be08998a33eda1bb2004902",
+      "fingerprint": "sha256:642d956a8c3d770f7e5e15fe5161f779f10c365b43271e1ae4c8fe9b4ed3729e",
       "needs_ai_review": false,
-      "last_verified": "2026-07-27T09:35:05Z"
+      "last_verified": "2026-08-03T02:09:41Z"
     },
     {
       "id": "openspec.changes.publish.v1.tasks",
@@ -121,9 +197,161 @@
       "responsibility": "",
       "reuse_guidance": "",
       "notes": "",
-      "fingerprint": "sha256:acb465372bf913aef28bf97e1e5541028cdbd8eb2353f7f0dc9d3376660df91f",
+      "fingerprint": "sha256:494973810ed4669380ff497ac0a7eec70a45a7acd9b16997b1e4aa2c185f2a2e",
       "needs_ai_review": false,
-      "last_verified": "2026-07-27T09:35:05Z"
+      "last_verified": "2026-08-03T02:09:41Z"
+    },
+    {
+      "id": "openspec.changes.scale.aware.delivery.audit.design",
+      "type": "documentation",
+      "name": "design",
+      "paths": [
+        "openspec/changes/scale-aware-delivery-audit/design.md"
+      ],
+      "symbols": [],
+      "imports": [],
+      "dependencies": [],
+      "tests": [],
+      "product_capability": "",
+      "responsibility": "",
+      "reuse_guidance": "",
+      "notes": "",
+      "fingerprint": "sha256:e4a2d845d40becce15961f5b02beafd871b20a2bdc619875afdee1c5a83eac24",
+      "needs_ai_review": false,
+      "last_verified": "2026-08-03T02:09:41Z"
+    },
+    {
+      "id": "openspec.changes.scale.aware.delivery.audit.proposal",
+      "type": "documentation",
+      "name": "proposal",
+      "paths": [
+        "openspec/changes/scale-aware-delivery-audit/proposal.md"
+      ],
+      "symbols": [],
+      "imports": [],
+      "dependencies": [],
+      "tests": [],
+      "product_capability": "",
+      "responsibility": "",
+      "reuse_guidance": "",
+      "notes": "",
+      "fingerprint": "sha256:83e2a164db0b7a3729575440938f796078c8f00755f6f269813f5fec6556cb1a",
+      "needs_ai_review": false,
+      "last_verified": "2026-08-03T02:09:41Z"
+    },
+    {
+      "id": "openspec.changes.scale.aware.delivery.audit.specs.scale.aware.delivery.audit.spec",
+      "type": "documentation",
+      "name": "spec",
+      "paths": [
+        "openspec/changes/scale-aware-delivery-audit/specs/scale-aware-delivery-audit/spec.md"
+      ],
+      "symbols": [],
+      "imports": [],
+      "dependencies": [],
+      "tests": [],
+      "product_capability": "",
+      "responsibility": "",
+      "reuse_guidance": "",
+      "notes": "",
+      "fingerprint": "sha256:605b74b7b11233054dc2cf8a9c1357ab65cb2daf1d37bfefe48fbdbd32d6d10e",
+      "needs_ai_review": false,
+      "last_verified": "2026-08-03T02:09:41Z"
+    },
+    {
+      "id": "openspec.changes.scale.aware.delivery.audit.tasks",
+      "type": "documentation",
+      "name": "tasks",
+      "paths": [
+        "openspec/changes/scale-aware-delivery-audit/tasks.md"
+      ],
+      "symbols": [],
+      "imports": [],
+      "dependencies": [],
+      "tests": [],
+      "product_capability": "",
+      "responsibility": "",
+      "reuse_guidance": "",
+      "notes": "",
+      "fingerprint": "sha256:8e8e4713b258f3a6c7f425b8a213a0069a7000fc25d6bc05b63fc4d430b68808",
+      "needs_ai_review": false,
+      "last_verified": "2026-08-03T02:09:41Z"
+    },
+    {
+      "id": "openspec.changes.strengthen.pm.governance.design",
+      "type": "documentation",
+      "name": "design",
+      "paths": [
+        "openspec/changes/strengthen-pm-governance/design.md"
+      ],
+      "symbols": [],
+      "imports": [],
+      "dependencies": [],
+      "tests": [],
+      "product_capability": "",
+      "responsibility": "",
+      "reuse_guidance": "",
+      "notes": "",
+      "fingerprint": "sha256:04c5a9de648ad97883d01a66f181fb4dc6654b7d0eddbaabf3753a472ebf5118",
+      "needs_ai_review": false,
+      "last_verified": "2026-08-03T02:09:41Z"
+    },
+    {
+      "id": "openspec.changes.strengthen.pm.governance.proposal",
+      "type": "documentation",
+      "name": "proposal",
+      "paths": [
+        "openspec/changes/strengthen-pm-governance/proposal.md"
+      ],
+      "symbols": [],
+      "imports": [],
+      "dependencies": [],
+      "tests": [],
+      "product_capability": "",
+      "responsibility": "",
+      "reuse_guidance": "",
+      "notes": "",
+      "fingerprint": "sha256:ee9a2f4a7f03872f648e957cdbacd9341159a61b4ff7c4b7bbcd988fc96bc353",
+      "needs_ai_review": false,
+      "last_verified": "2026-08-03T02:09:41Z"
+    },
+    {
+      "id": "openspec.changes.strengthen.pm.governance.specs.pm.governance.spec",
+      "type": "documentation",
+      "name": "spec",
+      "paths": [
+        "openspec/changes/strengthen-pm-governance/specs/pm-governance/spec.md"
+      ],
+      "symbols": [],
+      "imports": [],
+      "dependencies": [],
+      "tests": [],
+      "product_capability": "",
+      "responsibility": "",
+      "reuse_guidance": "",
+      "notes": "",
+      "fingerprint": "sha256:39e169078a25ca3552bad401ffbbb76057438d47de54e1e317f2f7749dfcacef",
+      "needs_ai_review": false,
+      "last_verified": "2026-08-03T02:09:41Z"
+    },
+    {
+      "id": "openspec.changes.strengthen.pm.governance.tasks",
+      "type": "documentation",
+      "name": "tasks",
+      "paths": [
+        "openspec/changes/strengthen-pm-governance/tasks.md"
+      ],
+      "symbols": [],
+      "imports": [],
+      "dependencies": [],
+      "tests": [],
+      "product_capability": "",
+      "responsibility": "",
+      "reuse_guidance": "",
+      "notes": "",
+      "fingerprint": "sha256:da98e379882c895d8433a4a67a2dabf9abbc20411e4d93e08ab3a052bfc88ab3",
+      "needs_ai_review": false,
+      "last_verified": "2026-08-03T02:09:41Z"
     },
     {
       "id": "projectgoal",
@@ -136,13 +364,13 @@
       "imports": [],
       "dependencies": [],
       "tests": [],
-      "product_capability": "",
-      "responsibility": "",
-      "reuse_guidance": "",
-      "notes": "",
-      "fingerprint": "sha256:8b4abe6fd2a6bdf252bdac69783348da96d8c36dffdb90b42c773afd2603f40f",
+      "product_capability": "Defines the product-manager governance outcome and success criteria for the Skill.",
+      "responsibility": "Records product decisions for request readiness, proportional regression, and visual solution review.",
+      "reuse_guidance": "Use it to judge whether a request serves the product outcome before changing delivery rules.",
+      "notes": "Updated for the strengthen-pm-governance change.",
+      "fingerprint": "sha256:f3e1a3ac4acdf4cd22fcad0b590557ca00d8287c284b1bd91a0e01bf876129b0",
       "needs_ai_review": false,
-      "last_verified": "2026-07-27T09:35:05Z"
+      "last_verified": "2026-08-03T02:09:41Z"
     },
     {
       "id": "readme",
@@ -159,9 +387,9 @@
       "responsibility": "",
       "reuse_guidance": "",
       "notes": "",
-      "fingerprint": "sha256:253692887cbd50387ac45989521dc177e59609189cf6ea1f6cc9097a62470e10",
+      "fingerprint": "sha256:4639ad0e21589e69d7ce21d01201430806632d3ca09a5b3db72e3f7eddf63bcc",
       "needs_ai_review": false,
-      "last_verified": "2026-07-27T09:35:05Z"
+      "last_verified": "2026-08-03T02:09:41Z"
     },
     {
       "id": "references.agents.template",
@@ -174,13 +402,13 @@
       "imports": [],
       "dependencies": [],
       "tests": [],
-      "product_capability": "",
-      "responsibility": "",
-      "reuse_guidance": "",
-      "notes": "",
-      "fingerprint": "sha256:4813d3bafef5afc5ea3734b8ec209188ef8b8807ebe4e05a8c0f954d3c5f3452",
+      "product_capability": "Propagates product-manager governance into initialized repositories.",
+      "responsibility": "Defines the generated AGENTS policy for readiness, complexity, visual review, and verification.",
+      "reuse_guidance": "Modify in lockstep with SKILL.md and validate policy contract tests.",
+      "notes": "Loaded by init_project.py into the managed AGENTS block.",
+      "fingerprint": "sha256:2d258652b07fa7e886e8c3ec3753fb9b38d3257ba799708f881d84dbe123e771",
       "needs_ai_review": false,
-      "last_verified": "2026-07-27T09:35:05Z"
+      "last_verified": "2026-08-03T02:09:41Z"
     },
     {
       "id": "references.artifact.contract",
@@ -193,13 +421,13 @@
       "imports": [],
       "dependencies": [],
       "tests": [],
-      "product_capability": "",
-      "responsibility": "",
-      "reuse_guidance": "",
-      "notes": "",
-      "fingerprint": "sha256:c8f8a99c113a4d6fd0215253ae3be4ca61db687064cb3229111726ea55790903",
+      "product_capability": "Makes solution review and delivery evidence usable by product managers.",
+      "responsibility": "Defines approved inputs, HTML solution review, tests, provenance, and document inventory.",
+      "reuse_guidance": "Use alongside the HTML contract when creating a material-change review artifact.",
+      "notes": "Supports UI and non-UI solution confirmation.",
+      "fingerprint": "sha256:28ddfa39d66811c6395e32fa3f04d80c8b73c9cd57de0819f2a922799f7cefff",
       "needs_ai_review": false,
-      "last_verified": "2026-07-27T09:35:05Z"
+      "last_verified": "2026-08-03T02:09:41Z"
     },
     {
       "id": "references.code.map.contract",
@@ -216,9 +444,9 @@
       "responsibility": "",
       "reuse_guidance": "",
       "notes": "",
-      "fingerprint": "sha256:037d5e6462b44e219f37bd34c4712b364a619a6c45d0c94134b9b4bbd2f2bbd6",
+      "fingerprint": "sha256:c33f45fc360a15ca804f461acd37bce5030d0ffefc0f66aeb4a87e931d24b197",
       "needs_ai_review": false,
-      "last_verified": "2026-07-27T09:35:05Z"
+      "last_verified": "2026-08-03T02:09:41Z"
     },
     {
       "id": "references.html.review.contract",
@@ -231,13 +459,13 @@
       "imports": [],
       "dependencies": [],
       "tests": [],
-      "product_capability": "",
-      "responsibility": "",
-      "reuse_guidance": "",
-      "notes": "",
-      "fingerprint": "sha256:58f079d95acf283ea928db4bbc196aa4a1a4c20c53785bfd5794fccdffdcfa67",
+      "product_capability": "Provides a visual confirmation surface for material product changes.",
+      "responsibility": "Specifies the self-contained HTML solution review and test-report content.",
+      "reuse_guidance": "Choose UI screens or a non-UI flow, state, sequence, data, or permission diagram as applicable.",
+      "notes": "Approval status and material unresolved decisions determine whether it is an approved input.",
+      "fingerprint": "sha256:859e61ae28eee88720f673fcf6f6d0bbdfde693b06ca2e4cf83edb5171dcabe2",
       "needs_ai_review": false,
-      "last_verified": "2026-07-27T09:35:05Z"
+      "last_verified": "2026-08-03T02:09:41Z"
     },
     {
       "id": "skill",
@@ -250,13 +478,13 @@
       "imports": [],
       "dependencies": [],
       "tests": [],
-      "product_capability": "",
-      "responsibility": "",
-      "reuse_guidance": "",
-      "notes": "",
-      "fingerprint": "sha256:19a74f47022c69cc7d81fa2e9a7a221fa4c590bef72da82c1b843805449effb0",
+      "product_capability": "Guides product-goal-driven, repository-aware software delivery.",
+      "responsibility": "Orchestrates readiness, architecture context, complexity, visual review, implementation, and verification gates.",
+      "reuse_guidance": "Invoke before code changes; use the referenced policy and artifact contracts instead of duplicating the workflow.",
+      "notes": "Strengthened with product challenge and proportional regression rules.",
+      "fingerprint": "sha256:d770b8ed5611e0743cbaa840be025d6561e9ed9de24de0608ce0988319d4b00b",
       "needs_ai_review": false,
-      "last_verified": "2026-07-27T09:35:05Z"
+      "last_verified": "2026-08-03T02:09:41Z"
     },
     {
       "id": "module.scripts",
@@ -274,9 +502,9 @@
       "responsibility": "Owns deterministic project scaffolding, safe AGENTS managed-block merging, code-map discovery, freshness checks, updates, and rendering.",
       "reuse_guidance": "Invoke init_project.py for new projects and code_map.py before and after code changes; do not duplicate their file-protection or fingerprint logic in project-specific scripts.",
       "notes": "Covered by tests/test_init_project.py, tests/test_code_map.py, and tests/test_package.py.",
-      "fingerprint": "sha256:53d15cada5dab0b8be024605b50bc0b7e18423993a3f5c829ff7fddb591249aa",
+      "fingerprint": "sha256:04cffabd973749b0b3d838b99a46c7b8f2408b17a8a51ad13170c10bd042873b",
       "needs_ai_review": false,
-      "last_verified": "2026-07-27T09:35:05Z"
+      "last_verified": "2026-08-03T02:09:41Z"
     },
     {
       "id": "tests.test.code.map",
@@ -308,9 +536,9 @@
       "responsibility": "",
       "reuse_guidance": "",
       "notes": "",
-      "fingerprint": "sha256:ed662bdfb3e91db194b4a077ff9c816412d75f20a6b1e009b6bd982a1530c382",
+      "fingerprint": "sha256:b33d37052b15e6166ca7e6b8d2a894209091734ab29055d9cdc31496af9de33f",
       "needs_ai_review": false,
-      "last_verified": "2026-07-27T09:35:05Z"
+      "last_verified": "2026-08-03T02:09:41Z"
     },
     {
       "id": "tests.test.init.project",
@@ -345,9 +573,9 @@
       "responsibility": "",
       "reuse_guidance": "",
       "notes": "",
-      "fingerprint": "sha256:c5d72dd506da9f74fcb35c0975dfc70df13e635f75be6d52f099634b318d5c21",
+      "fingerprint": "sha256:a43946842d70556fc9152ac0c3c60e0a3febb3b4f565fbdb01269259f2cf11c8",
       "needs_ai_review": false,
-      "last_verified": "2026-07-27T09:35:05Z"
+      "last_verified": "2026-08-03T02:09:41Z"
     },
     {
       "id": "tests.test.package",
@@ -358,6 +586,9 @@
       ],
       "symbols": [
         "SkillPackageTests",
+        "test_governance_policy_requires_product_readiness_and_proportional_testing",
+        "test_governance_policy_requires_scale_aware_impact_and_independent_audit",
+        "test_human_facing_artifacts_default_to_simplified_chinese",
         "test_readme_documents_install_update_and_initialization",
         "test_required_distribution_files_exist",
         "test_skill_frontmatter_has_expected_name_and_description"
@@ -369,13 +600,13 @@
       ],
       "dependencies": [],
       "tests": [],
-      "product_capability": "",
-      "responsibility": "",
-      "reuse_guidance": "",
-      "notes": "",
-      "fingerprint": "sha256:6df846ac7e85b943be6ec10db9375e963902955ead31bb4e73d2190b0ba16610",
+      "product_capability": "Prevents distribution and governance-policy regressions in the published Skill.",
+      "responsibility": "Verifies package files, installation documentation, and essential policy wording across governed documents.",
+      "reuse_guidance": "Extend when a cross-document mandatory rule is added or renamed.",
+      "notes": "Includes the strengthen-pm-governance policy contract test.",
+      "fingerprint": "sha256:c485dab8507eedc8684a6ed94c7812da7948bcb51bbaf21ac724f76213f98198",
       "needs_ai_review": false,
-      "last_verified": "2026-07-27T09:35:05Z"
+      "last_verified": "2026-08-03T02:09:41Z"
     }
   ],
   "edges": [

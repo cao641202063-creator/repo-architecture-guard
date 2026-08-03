@@ -44,7 +44,7 @@ Maintain these assets unless this project documents an explicit equivalent:
 - `docs/ai/code-map.json`
 - `docs/ai/code-map.md`
 - `docs/ai/modules/` for complex-module notes only
-- `docs/reviews/<change>-ui-review.html` for applicable UI review
+- `docs/reviews/<change>-solution-review.html` for material behavior or experience review
 - `docs/reviews/<change>-test-cases.html` for full-track acceptance review
 - `artifacts/test-reports/<change>-report.html` for applicable delivery reports
 - `openspec/changes/<change>/` for nontrivial behavior changes
@@ -63,6 +63,36 @@ it before every code task. Update it only when those facts change.
 
 Unknown status must be labeled unknown; do not fill gaps by inference alone.
 
+### 语言
+
+除非产品负责人或项目规则另有要求，所有面向人类的提问、Context Brief、方案确认、
+测试场景、报告、文档影响分析、审计结论和最终交付说明均以简体中文为主。命令、路径、
+文件名、代码、API 标识符、配置键、JSON 字段及机器可读协议保持原文，确保可复制和
+可执行。无需仅为语言策略重写未受当前变更影响的历史证据。
+
+### Requirement Readiness and Product Challenge
+
+Before selecting a delivery track or planning implementation, assess whether
+the request states the user value, affected users, scope and exclusions,
+acceptance criteria, business or data rules, permissions or failure behavior,
+constraints, and priority where relevant. Compare it with explicit product
+decisions, goals, approved designs, and repository evidence.
+
+Classify gaps explicitly:
+
+- **blocking question**: a missing fact or conflict would materially change
+  scope, behavior, acceptance, risk, or implementation; ask focused questions
+  and wait before implementation.
+- **decision needed**: the product owner must choose among meaningful options;
+  explain the trade-off and recommend an option.
+- **reversible assumption**: the detail does not materially change behavior or
+  risk; record it for review and continue only if no blocking question remains.
+
+Challenge a request when it names a solution without the user problem or
+success measure, conflicts with an approved decision or non-goal, has an
+unverifiable acceptance criterion, or omits a material boundary. Do not invent
+business behavior merely to make the request implementable.
+
 ### Mandatory Context Brief
 
 Before editing, output a concise Context Brief containing:
@@ -72,6 +102,9 @@ Before editing, output a concise Context Brief containing:
 - code-map nodes, source, tests, and documents inspected
 - existing components, methods, services, contracts, or fixtures to reuse
 - selected lightweight or full track and why
+- user value, affected roles, scope, non-goals, and success measure
+- blocking questions, decisions needed, and reversible assumptions
+- complexity classification, affected boundaries, and regression choice
 - planned files, modules, specifications, designs, tests, and documents
 - verification commands and delivery criteria
 - unresolved assumptions or conflicts
@@ -101,6 +134,13 @@ After implementation:
 
 Do not map every private function or copy source bodies into the map.
 
+### Scope-First Global Logic
+
+Complete the Global Logic Navigation defined in
+`references/code-map-contract.md` before implementation. Include its verified
+logic and impact slice in the Context Brief for cross-module or full-track
+changes.
+
 ### Execution Tracks
 
 Use the lightweight track only for narrow fixes, mechanical edits, local
@@ -114,6 +154,24 @@ new shared abstractions, or unclear acceptance criteria.
 Every track requires product alignment, current-state inspection, reuse
 analysis, risk-proportionate tests, latest-source verification, and map/document
 updates when affected.
+
+### Complexity and Regression Decision
+
+Before selecting test scope, classify the change and state the rationale in
+product-manager language. A change is **complex** when it affects a public
+contract, data migration, permission or security boundary, critical business
+path, or multiple module, role, or persistence boundaries. Otherwise it is
+**non-complex** when its changed and affected behavior can be covered by
+focused checks without those triggers.
+
+- For a complex change, state the affected boundaries and ask the product owner
+  whether to run full regression. Wait for the choice before committing to that
+  scope; project policy can still require it.
+- For a non-complex change, run focused tests for changed and affected behavior
+  by default. Do not run full regression unless the user or project policy
+  explicitly requires it.
+- This decision does not waive TDD for behavioral code, targeted regression,
+  or any verification required by a project policy.
 
 ### OpenSpec and Superpowers
 
@@ -131,10 +189,16 @@ Use relevant Superpowers process Skills:
 Do not create a parallel specification or plan when an active OpenSpec change
 already owns the work.
 
-### Product and UI Review
+### Product and Solution Review
 
-For UI changes, create a concise HTML review artifact before coding. It must
-show the complete affected experience, including:
+For every material behavior or experience change, create a concise HTML
+solution review artifact before coding. It must show:
+
+- product goal, affected users and roles, scope, non-goals, assumptions,
+  unresolved decisions, version, and explicit approval status
+- the proposed user flow and applicable state or data flow
+
+For UI changes, it must also show the complete affected experience, including:
 
 - screens and navigation
 - information hierarchy and actions
@@ -143,8 +207,10 @@ show the complete affected experience, including:
 - data and business logic visible to the user
 - responsive behavior and accessibility expectations
 
-Retain the approved HTML as a development input. Material deviations require an
-updated review.
+For material non-UI changes, use an appropriate flow, state-machine, sequence,
+data-flow, or permission diagram. Treat an artifact with unresolved material
+decisions or no explicit approval as a proposal, not an approved development
+input. Material deviations require an updated review.
 
 Before full-track coding, generate an HTML user-scenario test matrix from
 `ProjectGoal.md`, OpenSpec, approved UI, and current behavior. Cover golden,
@@ -211,20 +277,27 @@ The delivery report must record:
 
 Never combine test results from one revision with a build from another.
 
+### Documentation Impact Analysis
+
+Complete the Documentation Impact Analysis defined in
+`references/artifact-contract.md` after every code change.
+
 ### Documentation Delivery Gate
 
 Before delivery:
 
 - update `docs/ai/project-status.md`
 - update the code map and affected module notes
-- update affected user and technical documentation
-- inventory documentation and navigation
+- complete the Documentation Impact Analysis
 - remove documents confirmed as superseded or obsolete
-- list ambiguous documents for product-owner review
-- verify links, paths, commands, and examples
 
 Update `ProjectGoal.md` only when the product goal, milestone, success criteria,
 non-goals, constraints, or product decisions changed.
+
+### Independent Delivery Audit
+
+For every full-track change, complete the Independent Agent Audit defined in
+`references/artifact-contract.md` before human handoff.
 
 ### Completion Standard
 
@@ -239,5 +312,6 @@ The final handoff must state:
 - automated and user-scenario test conclusions
 - exact latest-build provenance
 - code-map and documentation updates
+- documentation-impact and independent-audit conclusions
 - residual risks or external blockers
 ```
