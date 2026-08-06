@@ -1,4 +1,4 @@
 interface:
   display_name: "Repository Architecture Guard"
-  short_description: "Gate code changes through goals, maps, reuse, and tests."
-  default_prompt: "Use $repo-architecture-guard before modifying this project."
+  short_description: "Route delivery by impact, risk, and existing architecture."
+  default_prompt: "Use $repo-architecture-guard to assess impact and risk, then select the minimum sufficient workflow and verification."
