@@ -1,211 +1,74 @@
 # Repository Architecture Guard
 
-面向产品经理和多项目开发团队的 Codex Skill。它要求 AI 在修改代码前先
-核对产品目标、项目进度和代码地图，优先复用已有架构，并通过 OpenSpec、
-Superpowers、TDD、用户场景测试和最新构建验证完成交付。
+面向产品经理和多项目团队的 AI Coding Skill。它是所有代码改动的入口：先核对产品目标、项目状态和代码地图，再按影响面选择最轻量但足够的需求澄清、规格、实施和验证流程。
 
-Repository Architecture Guard is a Codex Skill for product-goal-driven,
-repository-aware software delivery.
+## 设计原则
 
-## 语言
+- **一个入口**：任何代码改动先调用本 Skill。
+- **一个事实源**：一项改动只由 Trellis 或 OpenSpec 之一保存 PRD、决策和任务。
+- **按需编排**：只在需要时调用 Grill-me、Trellis、OpenSpec 或 Superpowers 的单项能力。
+- **分层验证**：开发过程运行定向检查；完成后只对最终候选版本运行一次必要的广泛验证。
+- **架构优先**：从代码地图找到 owner、调用方、契约、测试和文档，优先复用已有能力。
 
-除非产品负责人或项目规则另有要求，Skill 面向人类的提问、评审、报告与交付说明默认使用简体中文；命令、路径、代码和机器可读字段保持原文。
+## 工作流
 
-## Product-manager workflow
+```text
+任务
+  → repo-architecture-guard：Context Gate、影响面、风险等级
+  → Grill-me：仅需求/设计仍有关键不确定性
+  → Trellis 或 OpenSpec：选择一个作为规格和任务事实源
+  → Codex 实施；按需使用 Superpowers 的 TDD/调试/计划/验收能力
+  → 定向验证 → 最终候选的一次广泛验证 → 交付
+```
 
-Before planning or coding, the Skill checks whether the request makes the user
-value, affected users, scope, exclusions, acceptance criteria, material rules,
-failure and permission behavior, constraints, and priority clear. It separates
-blocking questions, owner decisions, and reversible assumptions; it also calls
-out conflicts rather than silently inventing product behavior.
+### 选择规则
 
-Before choosing test scope, it classifies the change as complex or non-complex.
-Complex changes explain their affected boundaries and ask whether to run full
-regression. Non-complex changes run focused verification by default; full
-regression runs only when the user or project policy requires it. Behavioral
-changes still use TDD.
+| 场景 | 选用 |
+|---|---|
+| 需求模糊 | Grill-me |
+| 个人或小团队的跨会话长任务 | Trellis |
+| 正式协作、跨仓库或需要可审计规格 | OpenSpec |
+| 需要 TDD、系统调试、计划评审或收尾证据 | 对应的 Superpowers 单项 Skill |
+| 小而清晰的局部改动 | 仅 Repository Architecture Guard |
 
-Every material behavior or experience change receives an HTML solution review
-before implementation. UI changes show screens and states; non-UI changes use
-an appropriate flow, state-machine, sequence, data-flow, or permission diagram.
-The review records assumptions, outstanding decisions, version, and explicit
-approval status.
+不要让 Trellis 与 OpenSpec 为同一个任务分别维护 PRD 或计划。
 
-## Scale-aware delivery and audit
+### 验证等级
 
-For a large repository, the Skill starts from relevant code-map nodes and
-follows verified entry points, contracts, owners, callers, dependencies, data
-or event boundaries, tests, and documents. It expands source reading only when
-the map cannot answer a change-impact question; this preserves global logic
-without treating a full repository scan as understanding.
+| 等级 | 范围 | 验证 |
+|---|---|---|
+| L0 | 文档、机械或局部样式改动 | 相关 lint/format/build |
+| L1 | 单模块局部变更 | `test:changed` + lint/type-check |
+| L2 | 跨模块、UI 流程、状态、契约或共享组件 | L1 + 契约/集成 + 最终一次 `test:smoke` |
+| L3 | 权限、安全、支付、迁移、共享基础设施、核心链路 | L2 + 最终一次 `test:full` + 可用时独立审计 |
 
-Every completed code change includes a documentation impact analysis covering
-product, user, API/contract, operational, technical, test, and navigation
-documentation. Affected documents are updated; unchanged documents receive an
-evidence-backed disposition.
-
-For full-track work, the Skill starts an independent, read-only-first audit
-agent when the environment supports it. The auditor checks requirement
-traceability, impact, tests, documents, and unsupported claims. The primary
-agent makes one revision pass for blocker or major findings, then hands the
-audit disposition to a human reviewer. If independent delegation is unavailable,
-the final handoff explicitly says that only self-review occurred.
-
-## 主要能力
-
-- 所有代码改动先读取 `ProjectGoal.md` 和当前项目状态。
-- 生成并增量维护高密度代码地图，减少无目标的全仓扫描。
-- 优先复用已有前端组件、后端方法、数据契约和测试设施。
-- 非简单需求结合 OpenSpec 和 Superpowers 完成规格与计划控制。
-- 行为修改使用 TDD，适用的 UI 验收使用 Playwright。
-- 测试失败执行诊断、修复、重测闭环。
-- 交付前验证当前最新代码构建的实际产物。
-- 更新项目文档并清理已确认废弃的内容。
-- 通过初始化命令安全合并现有 `AGENTS.md`，不覆盖用户已有规则。
-
-## 环境要求
-
-- Codex、Claude Code、Cursor 或其他兼容 Agent Skills 的工具。
-- Python 3.10 或更高版本。
-- Node.js/npm，仅在使用 `npx skills` 安装时需要。
-
-运行时 Python 脚本只使用标准库。
+建议每个项目提供 `test:changed`、`test:contract`、`test:smoke` 和 `test:full`。不要在每次编辑后跑全量回归。
 
 ## 安装
-
-安装到 Codex 全局 Skill：
 
 ```powershell
 npx skills add cao641202063-creator/repo-architecture-guard -g -a codex -s repo-architecture-guard -y
 ```
 
-交互式选择安装目标：
-
-```powershell
-npx skills add https://github.com/cao641202063-creator/repo-architecture-guard
-```
-
-查看仓库内可安装的 Skill：
-
-```powershell
-npx skills add cao641202063-creator/repo-architecture-guard --list
-```
-
-## 更新
-
-```powershell
-npx skills update repo-architecture-guard --global --yes
-```
-
 ## 初始化项目
-
-初始化器会：
-
-1. 收集产品名称、目标用户、业务目标、当前里程碑和成功标准。
-2. 创建缺失的 `ProjectGoal.md`。
-3. 创建缺失的 `docs/ai/project-status.md`。
-4. 在 `AGENTS.md` 中添加或更新受控区块。
-5. 保留受控区块以外的项目规则。
-6. 初始化或更新 `docs/ai/code-map.json` 和 `code-map.md`。
-
-### Windows
-
-在目标项目根目录执行：
 
 ```powershell
 python "$env:USERPROFILE\.codex\skills\repo-architecture-guard\scripts\init_project.py" --root .
 ```
 
-### macOS/Linux
+初始化器保留既有规则，只管理 `AGENTS.md` 的受控区块，并创建缺失的产品目标、项目状态和代码地图。
 
-```bash
-python3 ~/.codex/skills/repo-architecture-guard/scripts/init_project.py --root .
-```
-
-### 从业务诉求文档初始化
-
-Windows：
-
-```powershell
-python "$env:USERPROFILE\.codex\skills\repo-architecture-guard\scripts\init_project.py" `
-  --root . `
-  --brief ".\docs\产品需求.md"
-```
-
-macOS/Linux：
-
-```bash
-python3 ~/.codex/skills/repo-architecture-guard/scripts/init_project.py \
-  --root . \
-  --brief ./docs/product-requirements.md
-```
-
-业务文档会作为产品输入原文保留。脚本不会把文档中未明确的内容伪装成已确认
-的产品决策。
-
-### 非交互式初始化
-
-```powershell
-python "$env:USERPROFILE\.codex\skills\repo-architecture-guard\scripts\init_project.py" `
-  --root . `
-  --project-name "企业知识库" `
-  --target-users "产品经理;实施顾问" `
-  --outcome "让用户快速定位可信知识" `
-  --milestone "完成首个可评审版本" `
-  --success-criteria "核心检索流程通过;关键页面可用" `
-  --non-goals "本阶段不接入外部计费" `
-  --constraints "必须支持中文;复用现有登录体系"
-```
-
-自动化系统可以添加 `--json` 获取结构化结果。
-
-### 文件保护规则
-
-- 已有 `ProjectGoal.md` 默认保留；只有 `--force-goal` 才会替换。
-- 已有 `project-status.md` 默认保留；只有 `--force-status` 才会替换。
-- `AGENTS.md` 只修改以下标记之间的内容：
+## 使用
 
 ```text
-<!-- repo-architecture-guard:start -->
-<!-- repo-architecture-guard:end -->
+调用 $repo-architecture-guard。先完成 Context Gate，给出影响面和 L0–L3 风险判断；选择唯一的规格事实源，并按风险执行最小充分验证。
 ```
 
-- `--no-code-map` 可以跳过代码地图生成。
-
-## 在 Codex 中使用
-
-初始化后，在项目任务中输入：
-
-```text
-调用 $repo-architecture-guard，读取 ProjectGoal.md、项目状态和代码地图，
-核对本次任务与产品目标，优先复用已有实现，并按适用流程完成开发和验证。
-```
-
-项目根目录 `AGENTS.md` 已经包含强制调用规则，正常情况下不需要每次重复完整
-Prompt。
-
-## 代码地图命令
+## 代码地图
 
 ```powershell
-python "$env:USERPROFILE\.codex\skills\repo-architecture-guard\scripts\code_map.py" bootstrap --root .
 python "$env:USERPROFILE\.codex\skills\repo-architecture-guard\scripts\code_map.py" check --root . --json
 python "$env:USERPROFILE\.codex\skills\repo-architecture-guard\scripts\code_map.py" update --root .
-python "$env:USERPROFILE\.codex\skills\repo-architecture-guard\scripts\code_map.py" render --root .
 ```
 
-代码地图是导航索引，不是源码替代品。AI 修改文件前仍必须阅读对应源码、调用方
-和测试。
-
-## 开发与验证
-
-```powershell
-$env:PYTHONDONTWRITEBYTECODE = "1"
-python -m unittest discover -s tests -v
-python -m py_compile scripts/code_map.py scripts/init_project.py
-```
-
-GitHub Actions 会在 Windows、macOS 和 Linux 上运行测试。
-
-## License
-
-[MIT](LICENSE)
+代码地图仅用于导航；修改文件前仍必须读取真实源码、调用方和测试。
